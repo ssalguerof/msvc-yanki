@@ -2,6 +2,9 @@ server:
   port: ${PORT:8004}
 spring:
   data:
+    redis:
+      host: localhost
+      port: 6379
     mongodb:
       host: localhost                  # Dirección del servidor MongoDB
       port: 27017                      # Puerto del servidor MongoDB

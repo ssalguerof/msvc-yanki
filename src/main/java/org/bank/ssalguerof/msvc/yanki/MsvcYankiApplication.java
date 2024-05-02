@@ -1,5 +1,6 @@
 package org.bank.ssalguerof.msvc.yanki;
 
+import org.bank.ssalguerof.msvc.yanki.customers.dao.RedisDao;
 import org.bank.ssalguerof.msvc.yanki.customers.dao.UserDao;
 import org.bank.ssalguerof.msvc.yanki.customers.documents.User;
 import org.slf4j.Logger;
@@ -20,6 +21,10 @@ public class MsvcYankiApplication implements CommandLineRunner {
 
 	@Autowired
 	private UserDao userDao;
+
+	@Autowired
+	private RedisDao redisDao;
+
 	private static final Logger log = LoggerFactory.getLogger(MsvcYankiApplication.class);
 
 
@@ -37,6 +42,6 @@ public class MsvcYankiApplication implements CommandLineRunner {
 				});
 
 		userFlux.subscribe();
-
+		redisDao.save("prueba", "datos de prueba");
 	}
 }
