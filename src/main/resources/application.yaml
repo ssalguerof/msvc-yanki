@@ -1,0 +1,13 @@
+server:
+  port: ${PORT:8004}
+spring:
+  data:
+    mongodb:
+      host: localhost                  # Dirección del servidor MongoDB
+      port: 27017                      # Puerto del servidor MongoDB
+      database: yanki         # Nombre de la base de datos
+  kafka:
+    bootstrap-servers: localhost:9092  # Lista de servidores de Kafka
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer  # Serializador de claves
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer  # Serializador de valores
